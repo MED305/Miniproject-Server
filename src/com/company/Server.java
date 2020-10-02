@@ -9,7 +9,6 @@ public class Server {
 
     // Variables
     IPAddress ipAddress = new IPAddress();
-    int port = 6969;    // Server port
 
     public void startServer(int port) {
         // Try = define a block of code to be tested.
