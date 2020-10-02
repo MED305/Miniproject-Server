@@ -1,5 +1,7 @@
 package com.company;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -23,9 +25,26 @@ public class Server {
             // A serverSocket.accept() methods waits for any connection to be made from the client. This throws an IOException, which is why the code is in a try & catch statement.
             Socket connectToClient = serverSocket.accept();
 
-            // A system message pritning out the connected IP address and the date at which it happen.
+            // A system message printing out the connected IP address and the date at which it happen.
             System.out.println("Connected to IP: " + ipAddress.getAddress() +  "at " + new Date() + '\n');
 
+            // Create data input and output streams
+            DataInputStream fromClient = new DataInputStream(
+                    connectToClient.getInputStream());
+            DataOutputStream toClient = new DataOutputStream(
+                    connectToClient.getOutputStream());
+
+            // A while loop which keeps going as long as a specified condition is true
+            while (true) {
+                // Test receiver
+                double number = fromClient.readDouble();
+
+                // Test calculator
+                double sendBackNumber = number * 100;
+
+                // Test send back
+                toClient.writeDouble(sendBackNumber);
+            }
 
             // Catch = define a block of code to be executed if an error occurs in "try"
         } catch(
