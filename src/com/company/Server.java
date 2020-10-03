@@ -15,6 +15,10 @@ public class Server {
     private boolean reading = false;
     private DatagramSocket socket;                         // Establish a socket which the computer will use to send data over the network
 
+    private final int MAX_PACKET_SIZE = 1024;              // 1 kilobyte
+
+    // We allocate this once for each server object and then we can continually reuse that buffer
+    private byte[] receivedDataBuffer = new byte [MAX_PACKET_SIZE * 10];
 
     public void startServer(int port) {
 
@@ -42,12 +46,23 @@ public class Server {
 
     private void read(){                                    // A separate thread that read things       (It's our "mailbox")
         while(reading) {                                    // The while loop loops through a block of code as long as a "reading" is true
-            // Having multiple threads makes the program able to do more things at the same time while having a while loop that blocks
-            // eg. process packets and send data whilst also reading
-            //socket.receive();                               // Function blocks until it receives something
+            /* Having multiple threads makes the program able to do more things at the same time while having a while loop that blocks
+            eg. process packets and send data whilst also reading */
 
+            /* When we have a packet that we don't want to send anywhere we just need the
+               constructor that has the buffer and the length instead of InetAddress, port etc.*/
+            DatagramPacket packet = new DatagramPacket(receivedDataBuffer, MAX_PACKET_SIZE);
+
+            /* Receive method will receive a datagram packet from the socket when this method returns,
+            the datagram packet buffer is filled with the data received */
+            try {
+                socket.receive(packet);                     // This method blocks until a datagram packet is received
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
+
     private void write(DatagramPacket packet){              // Process a packet (UDP packet = DatagramPacket in Java)
 
     }
