@@ -95,9 +95,11 @@ public class Server {
             // A system message printing out the connected IP address and the date at which it happen.
             System.out.println("Connected to IP: " + ipAddress.getAddress() +  "at " + new Date() + '\n');
 
-            // Create data input and output streams
+            // An inputStream lets an application read primitive java data types.
             DataInputStream fromClient = new DataInputStream(
                     connectToClient.getInputStream());
+
+            // This writes primitive data types to a stream that can be ported.
             DataOutputStream toClient = new DataOutputStream(
                     connectToClient.getOutputStream());
 
