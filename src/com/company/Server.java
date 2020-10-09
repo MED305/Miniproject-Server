@@ -1,125 +1,46 @@
 package com.company;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
-import java.net.*;
+import java.net.InetAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.util.Date;
 
 public class Server {
 
-    // Variables
-    IPAddress ipAddress = new IPAddress();
-    private int port;
-    private Thread readThread;
-    private boolean reading = false;
-    private DatagramSocket socket;                         // Establish a socket which the computer will use to send data over the network
-
-    private final int MAX_PACKET_SIZE = 1024;              // 1 kilobyte
-
-    // We allocate this once for each server object and then we can continually reuse that buffer
-    private byte[] receivedDataBuffer = new byte [MAX_PACKET_SIZE * 10];
-
     public void startServer(int port) {
 
-        this.port = port;
+        // This runs the "ClientRunnable" its a shortcut way to initiate "thread.run"
+        new Thread(() -> {
 
-        try {                                               // Define a block of code to be tested for errors while it is being executed
-            socket = new DatagramSocket(port);              // Socket created, this will be used for all incoming and outgoing connections
-        } catch (SocketException e) {                       // Define a block of code to be executed, if an error occurs in the try block
-            e.printStackTrace();
-            return;
-        }
-
-        reading = true;
-
-        readThread = new Thread(new Runnable() {            // Anonymous Inner Class (inner class without a name and only a single object is created)
-            @Override
-            public void run() {                             // Run method
-                read();                                     // Calling the function read
-
-            }
-        });
-        readThread.start();                                 // Start the thread
-
-    }
-
-    private void read(){                                    // A separate thread that read things       (It's our "mailbox")
-        while(reading) {                                    // The while loop loops through a block of code as long as a "reading" is true
-            /* Having multiple threads makes the program able to do more things at the same time while having a while loop that blocks
-            eg. process packets and send data whilst also reading */
-
-            /* When we have a packet that we don't want to send anywhere we just need the
-               constructor that has the buffer and the length instead of InetAddress, port etc.*/
-            DatagramPacket packet = new DatagramPacket(receivedDataBuffer, MAX_PACKET_SIZE);
-
-            /* Receive method will receive a datagram packet from the socket when this method returns,
-            the datagram packet buffer is filled with the data received */
+            // Try = define a block of code to be tested.
             try {
-                socket.receive(packet);                     // This method blocks until a datagram packet is received
-            } catch (IOException e) {
-                e.printStackTrace();
+
+                // Instead of Socket = client side, a ServerSocket = server side.
+                ServerSocket serverSocket = new ServerSocket(port);
+
+                // A system message to indicate at which time the server is executed.
+                System.out.println("Game Server has been started at " + new Date() + '\n');
+
+                while (true) {
+
+                    // A serverSocket.accept() methods waits for any connection to be made from the client. This throws an IOException, which is why the code is in a try & catch statement.
+                    Socket connectToClient = serverSocket.accept();
+
+                    // IP address
+                    InetAddress inetAddress = connectToClient.getInetAddress();
+
+                    System.out.println("Connected to Host: " + inetAddress.getHostName());
+                    System.out.println("With IP address: " + inetAddress.getHostAddress() + "at " + new Date() + '\n');
+                    
+                    new Thread(new ClientRunnable(connectToClient)).start();
+
+                }
+                // Catch = define a block of code to be executed if an error occurs in "try"
+            } catch (
+                    IOException e) {
+                System.err.println(e);
             }
-        }
+        }).start();
     }
-
-    private void write(DatagramPacket packet){              // Process a packet (UDP packet = DatagramPacket in Java)
-
-    }
-
-    //Send an UDP packet over the network
-    public void send(byte[] data, InetAddress address, int port) {                       // Send some data to an address
-        assert(socket.isConnected());
-        DatagramPacket packet = new DatagramPacket(data, data.length, address, port);                //Creating our packet (It's our "letter")
-        try {
-            socket.send(packet);                                                                     // Putting our "letter" in the "mailbox"
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-
-
-        // Try = define a block of code to be tested.
-        try {
-
-            // Instead of Socket = client side, a ServerSocket = server side.
-            ServerSocket serverSocket = new ServerSocket(port);
-
-            // A system message to indicate at which time the server is executed.
-            System.out.println("Game Server has been started at " + new Date() + '\n');
-
-            // A serverSocket.accept() methods waits for any connection to be made from the client. This throws an IOException, which is why the code is in a try & catch statement.
-            Socket connectToClient = serverSocket.accept();
-
-            // A system message printing out the connected IP address and the date at which it happen.
-            System.out.println("Connected to IP: " + ipAddress.getAddress() +  "at " + new Date() + '\n');
-
-            // An inputStream lets an application read primitive java data types.
-            DataInputStream fromClient = new DataInputStream(
-                    connectToClient.getInputStream());
-
-            // This writes primitive data types to a stream that can be ported.
-            DataOutputStream toClient = new DataOutputStream(
-                    connectToClient.getOutputStream());
-
-            // A while loop which keeps going as long as a specified condition is true
-            while (true) {
-                // Test receiver
-                double number = fromClient.readDouble();
-
-                // Test calculator
-                double sendBackNumber = number * 100;
-
-                // Test send back
-                toClient.writeDouble(sendBackNumber);
-            }
-
-            // Catch = define a block of code to be executed if an error occurs in "try"
-        } catch(
-                IOException e) {
-            System.err.println(e);
-        }
-    }
-
 }
