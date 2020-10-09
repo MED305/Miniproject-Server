@@ -17,24 +17,21 @@ public class ClientRunnable implements Runnable{
         try {
 
             // An inputStream lets an application read primitive java data types.
-            DataInputStream isFromClient = new DataInputStream(
-                    socket.getInputStream());
+            DataInputStream isFromClient = new DataInputStream(socket.getInputStream());
 
             // This writes primitive data types to a stream that can be ported.
-            DataOutputStream toClient = new DataOutputStream(
-                    socket.getOutputStream());
+            DataOutputStream toClient = new DataOutputStream(socket.getOutputStream());
 
             while(true) {
 
-                // Test receiver
+                // Test: receiver
                 double number = isFromClient.readDouble();
 
-                // Test calculator
+                // Test: calculator
                 double sendBackNumber = number * 100;
 
-                // Test send back
+                // Test: send back
                 toClient.writeDouble(sendBackNumber);
-
             }
 
         } catch (IOException e) {

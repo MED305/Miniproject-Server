@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fd200c0-5d75-432a-b756-7b9b0ca3d773" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/ClientRunnable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/IPAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/IPAddress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/ClientRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ClientRunnable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/IPAddress.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,25 +93,29 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="796" y="454" key="FileDocumentManager.FileCacheConflict/0.0.2560.1400@0.0.2560.1400" timestamp="1601628473517" />
-    <state width="955" height="289" key="GridCell.Tab.0.bottom" timestamp="1602231547734">
+    <state width="955" height="289" key="GridCell.Tab.0.bottom" timestamp="1602233986461">
       <screen x="0" y="0" width="2000" height="1293" />
     </state>
-    <state width="955" height="289" key="GridCell.Tab.0.bottom/0.0.2000.1293@0.0.2000.1293" timestamp="1602231547734" />
+    <state width="955" height="289" key="GridCell.Tab.0.bottom/0.0.2000.1293@0.0.2000.1293" timestamp="1602233986461" />
     <state width="2517" height="263" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1601633017808" />
-    <state width="955" height="289" key="GridCell.Tab.0.center" timestamp="1602231547734">
+    <state width="955" height="289" key="GridCell.Tab.0.center" timestamp="1602233986461">
       <screen x="0" y="0" width="2000" height="1293" />
     </state>
-    <state width="955" height="289" key="GridCell.Tab.0.center/0.0.2000.1293@0.0.2000.1293" timestamp="1602231547734" />
+    <state width="955" height="289" key="GridCell.Tab.0.center/0.0.2000.1293@0.0.2000.1293" timestamp="1602233986461" />
     <state width="2517" height="263" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1601633017808" />
-    <state width="955" height="289" key="GridCell.Tab.0.left" timestamp="1602231547734">
+    <state width="955" height="289" key="GridCell.Tab.0.left" timestamp="1602233986461">
       <screen x="0" y="0" width="2000" height="1293" />
     </state>
-    <state width="955" height="289" key="GridCell.Tab.0.left/0.0.2000.1293@0.0.2000.1293" timestamp="1602231547734" />
+    <state width="955" height="289" key="GridCell.Tab.0.left/0.0.2000.1293@0.0.2000.1293" timestamp="1602233986461" />
     <state width="2517" height="263" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1601633017808" />
-    <state width="955" height="289" key="GridCell.Tab.0.right" timestamp="1602231547734">
+    <state width="955" height="289" key="GridCell.Tab.0.right" timestamp="1602233986461">
       <screen x="0" y="0" width="2000" height="1293" />
     </state>
-    <state width="955" height="289" key="GridCell.Tab.0.right/0.0.2000.1293@0.0.2000.1293" timestamp="1602231547734" />
+    <state width="955" height="289" key="GridCell.Tab.0.right/0.0.2000.1293@0.0.2000.1293" timestamp="1602233986461" />
     <state width="2517" height="263" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1601633017808" />
+    <state x="163" y="294" width="672" height="678" key="search.everywhere.popup" timestamp="1602233821904">
+      <screen x="0" y="0" width="2000" height="1293" />
+    </state>
+    <state x="163" y="294" width="672" height="678" key="search.everywhere.popup/0.0.2000.1293@0.0.2000.1293" timestamp="1602233821904" />
   </component>
 </project>
