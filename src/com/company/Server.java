@@ -31,16 +31,8 @@ public class Server {
             return;
         }
 
-        reading = true;
-
-        readThread = new Thread(new Runnable() {            // Anonymous Inner Class (inner class without a name and only a single object is created)
-            @Override
-            public void run() {                             // Run method
-                read();                                     // Calling the function read
-
-            }
-        });
-        readThread.start();                                 // Start the thread
+        readThread = new Thread(() -> read(), "Server - readThread");
+        readThread.start();
 
     }
 
@@ -60,12 +52,36 @@ public class Server {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            write(packet);                                  // Here we process the packet that we just received
         }
     }
 
     private void write(DatagramPacket packet){              // Process a packet (UDP packet = DatagramPacket in Java)
+         byte[] data = packet.getData();
+        if(new String(data, 0, 4).equals("RCDB")){
+           // RCDatabase database = RCDatabase.Deserialize(data);
+            //String username = database.findObject("root").findString("username").getString();
+            //write(database);
+        } else{
+            switch (data[0]) {
+                case 1:
+                    //connection packet
+                    break;
+                case 2:
+                    //Ping packet
+                    break;
+                case 3:
+                    //Login attempt packet
+                    break;
+            }
+
+        }
 
     }
+
+   // private void read(RCDatabase database){
+
+   // }
 
     //Send an UDP packet over the network
     public void send(byte[] data, InetAddress address, int port) {                       // Send some data to an address
