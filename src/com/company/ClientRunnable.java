@@ -8,6 +8,9 @@ import java.net.Socket;
 public class ClientRunnable implements Runnable{
     private Socket socket;
 
+    Host serverHost = new Host();
+    Join actorJoin = new Join();
+
     ClientRunnable(Socket a_socket) {
         this.socket = a_socket;
     }

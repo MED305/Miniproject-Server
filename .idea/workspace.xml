@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fd200c0-5d75-432a-b756-7b9b0ca3d773" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Actor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Host.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Join.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Spawn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Miniproject-Server/com/company/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Miniproject-Server/com/company/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/ClientRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ClientRunnable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +45,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../IntelliJ/Mini project - Banking Application" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PFI mini project" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -94,9 +98,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1601626701329">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="828" y="420" key="FileChooserDialogImpl" timestamp="1602841719342">
+      <screen x="0" y="0" width="2000" height="1293" />
     </state>
+    <state x="828" y="420" key="FileChooserDialogImpl/0.0.2000.1293@0.0.2000.1293" timestamp="1602841719342" />
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1601626701329" />
     <state x="796" y="454" key="FileDocumentManager.FileCacheConflict" timestamp="1601628473517">
       <screen x="0" y="0" width="2560" height="1400" />
