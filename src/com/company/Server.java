@@ -8,6 +8,8 @@ import java.util.Date;
 
 public class Server {
 
+    int connectionCounter = 0;
+
     public void startServer(int port) {
 
         // This runs the "ClientRunnable" its a shortcut way to initiate "thread.run"
@@ -24,6 +26,8 @@ public class Server {
 
                 while (true) {
 
+                    System.out.println("Amount of connections since live: " + connectionCounter);
+
                     // A serverSocket.accept() methods waits for any connection to be made from the client. This throws an IOException, which is why the code is in a try & catch statement.
                     Socket connectToClient = serverSocket.accept();
 
@@ -31,9 +35,10 @@ public class Server {
                     InetAddress inetAddress = connectToClient.getInetAddress();
 
                     System.out.println("Connected to Host: " + inetAddress.getHostName());
-                    System.out.println("With IP address: " + inetAddress.getHostAddress() + "at " + new Date() + '\n');
+                    System.out.println("With IP address: " + inetAddress.getHostAddress() + " at " + new Date() + '\n');
                     
                     new Thread(new ClientRunnable(connectToClient)).start();
+                    connectionCounter ++;
 
                 }
                 // Catch = define a block of code to be executed if an error occurs in "try"

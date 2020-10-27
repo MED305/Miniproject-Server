@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fd200c0-5d75-432a-b756-7b9b0ca3d773" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/Actor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/Host.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/Join.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/Spawn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Miniproject-Server/com/company/ClientRunnable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Miniproject-Server/com/company/ClientRunnable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Miniproject-Server/com/company/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Miniproject-Server/com/company/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/ClientRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ClientRunnable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +43,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../PFI mini project" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -58,26 +56,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -91,11 +76,14 @@
       <workItem from="1601623541755" duration="9285000" />
       <workItem from="1602054846533" duration="2391000" />
       <workItem from="1602831960942" duration="1914000" />
+      <workItem from="1603452211718" duration="1767000" />
+      <workItem from="1603715271834" duration="3509000" />
+      <workItem from="1603788988178" duration="6729000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="828" y="420" key="FileChooserDialogImpl" timestamp="1602841719342">
@@ -107,26 +95,30 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="796" y="454" key="FileDocumentManager.FileCacheConflict/0.0.2560.1400@0.0.2560.1400" timestamp="1601628473517" />
-    <state width="955" height="289" key="GridCell.Tab.0.bottom" timestamp="1602233986461">
-      <screen x="0" y="0" width="2000" height="1293" />
+    <state width="2517" height="263" key="GridCell.Tab.0.bottom" timestamp="1603796430940">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="955" height="289" key="GridCell.Tab.0.bottom/0.0.2000.1293@0.0.2000.1293" timestamp="1602233986461" />
-    <state width="2517" height="263" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1601633017808" />
-    <state width="955" height="289" key="GridCell.Tab.0.center" timestamp="1602233986461">
-      <screen x="0" y="0" width="2000" height="1293" />
+    <state width="2517" height="263" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1603796430940" />
+    <state width="2517" height="263" key="GridCell.Tab.0.center" timestamp="1603796430940">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="955" height="289" key="GridCell.Tab.0.center/0.0.2000.1293@0.0.2000.1293" timestamp="1602233986461" />
-    <state width="2517" height="263" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1601633017808" />
-    <state width="955" height="289" key="GridCell.Tab.0.left" timestamp="1602233986461">
-      <screen x="0" y="0" width="2000" height="1293" />
+    <state width="2517" height="263" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1603796430940" />
+    <state width="2517" height="263" key="GridCell.Tab.0.left" timestamp="1603796430940">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="955" height="289" key="GridCell.Tab.0.left/0.0.2000.1293@0.0.2000.1293" timestamp="1602233986461" />
-    <state width="2517" height="263" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1601633017808" />
-    <state width="955" height="289" key="GridCell.Tab.0.right" timestamp="1602233986461">
-      <screen x="0" y="0" width="2000" height="1293" />
+    <state width="2517" height="263" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1603796430940" />
+    <state width="2517" height="263" key="GridCell.Tab.0.right" timestamp="1603796430940">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="955" height="289" key="GridCell.Tab.0.right/0.0.2000.1293@0.0.2000.1293" timestamp="1602233986461" />
-    <state width="2517" height="263" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1601633017808" />
+    <state width="2517" height="263" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1603796430940" />
+    <state x="871" y="297" key="new project wizard" timestamp="1603791862238">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="871" y="297" key="new project wizard/0.0.2560.1400@0.0.2560.1400" timestamp="1603791862238" />
     <state x="163" y="294" width="672" height="678" key="search.everywhere.popup" timestamp="1602233821904">
       <screen x="0" y="0" width="2000" height="1293" />
     </state>
