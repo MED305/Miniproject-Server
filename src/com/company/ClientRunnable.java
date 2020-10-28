@@ -1,8 +1,7 @@
 package com.company;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
+import javax.xml.crypto.Data;
+import java.io.*;
 import java.net.Socket;
 
 public class ClientRunnable implements Runnable{
@@ -27,19 +26,26 @@ public class ClientRunnable implements Runnable{
 
             while(true) {
 
-                // Test: receiver
+
+                /*
+
+                // receiver for doubles
                 double number = isFromClient.readDouble();
 
-                // Test: calculator
+                // receiver for char
+                char clientMessage = isFromClient.readChar();
+
+                // processing the received double
                 double sendBackNumber = number * 100;
 
-                // Test: send back
+                // returning a new value after being processed in this case a double
                 toClient.writeDouble(sendBackNumber);
+
+                 */
             }
 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
 }
