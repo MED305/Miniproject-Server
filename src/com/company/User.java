@@ -1,13 +1,12 @@
 package com.company;
 
 import java.io.Serializable;
-import java.net.InetAddress;
 
 public class User implements Serializable {
 
     private String userName;
     public String chatMessage;
-    public InetAddress inetAddress;
+    public String inetAddress;
     private int id;
 
     public User(int id, String userName) {
@@ -23,19 +22,12 @@ public class User implements Serializable {
         this.userName = userName;
     }
 
-    String getMessage() {
-        return this.chatMessage;
-    }
 
-    void setMessage(String chatMessage) {
-        this.chatMessage = chatMessage;
-    }
-
-    InetAddress getInetAddress() {
+    String getInetAddress() {
         return this.inetAddress;
     }
 
-    void setInetAddress(InetAddress inetAddress) {
+    void setInetAddress(String inetAddress) {
         this.inetAddress = inetAddress;
     }
 

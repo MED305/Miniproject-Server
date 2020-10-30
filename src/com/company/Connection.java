@@ -3,6 +3,7 @@ package com.company;
 import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.net.SocketException;
 
 public class Connection implements Runnable{
     private Socket socket;
@@ -22,6 +23,9 @@ public class Connection implements Runnable{
             toClient = new ObjectOutputStream(socket.getOutputStream());
             isFromClient = new ObjectInputStream(socket.getInputStream());
 
+            String IP = socket.getInetAddress().getHostAddress();
+            user.setInetAddress(IP);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -37,9 +41,6 @@ public class Connection implements Runnable{
                 }
                 /*
                 // Setting up user data
-                InetAddress inetAddress = this.socket.getInetAddress();
-                this.user.setInetAddress(inetAddress);
-
                 double userNumber = isFromClient.readDouble();
                 toClient.writeDouble(userNumber);
                 this.user.setUserName(userNumber);
@@ -67,7 +68,11 @@ public class Connection implements Runnable{
                  */
             }
 
-        } catch (IOException e) {
+        } catch (SocketException e) {
+            System.out.println("Client with IP: " + user.getInetAddress() + " has disconnected.");
+            close();
+        }
+        catch (IOException e) {
             e.printStackTrace();
         }
     }
