@@ -1,33 +1,41 @@
 package com.company;
 
-import javax.xml.crypto.Data;
 import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
 
-public class ClientRunnable implements Runnable{
+public class Connection implements Runnable{
     private Socket socket;
+    private ObjectInputStream isFromClient;
+    private ObjectOutputStream toClient;
+    private int id;
 
-    User user = new User();
-    boolean connected = true;
+    User user = new User(id, "");
 
-    ClientRunnable(Socket a_socket) {
-        this.socket = a_socket;
+    public Connection(Socket socket) {
+        this.socket = socket;
+        id = 0;
+
+        try {
+            // Object output/input is used to read/write any object types, less efficient but covers more
+            // Data output/input is simpler and can only read/write primitive types.
+            toClient = new ObjectOutputStream(socket.getOutputStream());
+            isFromClient = new ObjectInputStream(socket.getInputStream());
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void run() {
-
         try {
-
-            // An inputStream lets an application read primitive java data types.
-            DataInputStream isFromClient = new DataInputStream(socket.getInputStream());
-
-            // This writes primitive data types to a stream that can be ported.
-            DataOutputStream toClient = new DataOutputStream(socket.getOutputStream());
-
-
-            while(connected) {
-
+            while(socket.isConnected()) {
+                try {
+                    Object data = isFromClient.readObject();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+                /*
                 // Setting up user data
                 InetAddress inetAddress = this.socket.getInetAddress();
                 this.user.setInetAddress(inetAddress);
@@ -35,6 +43,8 @@ public class ClientRunnable implements Runnable{
                 double userNumber = isFromClient.readDouble();
                 toClient.writeDouble(userNumber);
                 this.user.setUserName(userNumber);
+
+
 
                 // Test: confirming things work
                 System.out.println("Username: " + this.user.getUserName() + "\nWith IP-Address: " + this.user.getInetAddress().getHostAddress());
@@ -56,6 +66,27 @@ public class ClientRunnable implements Runnable{
                 toClient.writeDouble(sendBackNumber);
                  */
             }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void close () {
+        try {
+            isFromClient.close();
+            toClient.close();
+            socket.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void sendObject (Object packet) {
+        try {
+            toClient.writeObject(packet);
+            toClient.flush();
 
         } catch (IOException e) {
             e.printStackTrace();
