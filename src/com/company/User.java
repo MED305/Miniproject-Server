@@ -1,12 +1,12 @@
 package com.company;
 
 import java.net.InetAddress;
-import java.net.Socket;
 
 public class User {
 
     private double userName;
     public String chatMessage;
+    public InetAddress inetAddress;
 
     double getUserName() {
         return this.userName;
@@ -22,5 +22,13 @@ public class User {
 
     void setMessage(String chatMessage) {
         this.chatMessage = chatMessage;
+    }
+
+    InetAddress getInetAddress() {
+        return this.inetAddress;
+    }
+
+    void setInetAddress(InetAddress inetAddress) {
+        this.inetAddress = inetAddress;
     }
 }

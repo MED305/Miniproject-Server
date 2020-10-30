@@ -2,9 +2,8 @@ package com.company;
 
 import javax.xml.crypto.Data;
 import java.io.*;
+import java.net.InetAddress;
 import java.net.Socket;
-import java.net.SocketException;
-import java.net.SocketTimeoutException;
 
 public class ClientRunnable implements Runnable{
     private Socket socket;
@@ -29,17 +28,21 @@ public class ClientRunnable implements Runnable{
 
             while(connected) {
 
+                // Setting up user data
+                InetAddress inetAddress = this.socket.getInetAddress();
+                this.user.setInetAddress(inetAddress);
+
                 double userNumber = isFromClient.readDouble();
                 toClient.writeDouble(userNumber);
                 this.user.setUserName(userNumber);
 
-                // Test: confirming userNumber
-                System.out.println(this.user.getUserName());
+                // Test: confirming things work
+                System.out.println("Username: " + this.user.getUserName() + "\nWith IP-Address: " + this.user.getInetAddress().getHostAddress());
 
+                /*
                 byte messageType = isFromClient.readByte();
                 System.out.println("Message: " + messageType);
 
-                /*
                 // receiver for doubles
                 double number = isFromClient.readDouble();
 
