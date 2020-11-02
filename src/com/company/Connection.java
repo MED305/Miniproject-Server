@@ -5,6 +5,8 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.net.SocketException;
 
+
+
 public class Connection implements Runnable{
     private Socket socket;
     private ObjectInputStream isFromClient;
@@ -36,13 +38,9 @@ public class Connection implements Runnable{
 
             while(socket.isConnected()) {
 
-                try {
-                    isFromClient.defaultReadObject();
+                float test = isFromClient.readFloat();
+                System.out.println(test);
 
-
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
-                }
 
 
                 // Test: confirming things work
