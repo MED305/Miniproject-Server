@@ -33,3 +33,4 @@
 
 *.idea/
 *.vscode/
+.idea/workspace.xml

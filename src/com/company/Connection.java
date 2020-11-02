@@ -41,8 +41,6 @@ public class Connection implements Runnable{
                 float test = isFromClient.readFloat();
                 System.out.println(test);
 
-
-
                 // Test: confirming things work
                 //System.out.println("Username: " + this.user.getUserName() + "\nWith IP-Address: " + this.user.getInetAddress().getHostAddress());
 
