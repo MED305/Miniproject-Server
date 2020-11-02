@@ -34,7 +34,12 @@ public class Connection implements Runnable{
     public void run() {
         try {
             while(socket.isConnected()) {
+
+                float test = isFromClient.readFloat();
+                System.out.println(test);
+
                 try {
+
                     Object data = isFromClient.readObject();
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
