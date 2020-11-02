@@ -1,34 +1,37 @@
 package com.company;
 
-import java.net.InetAddress;
+import java.io.Serializable;
 
-public class User {
+public class User implements Serializable {
 
-    private double userName;
-    public String chatMessage;
-    public InetAddress inetAddress;
+    private String userName;
+    public String inetAddress;
+    private int id;
 
-    double getUserName() {
-        return this.userName;
-    }
-
-    void setUserName(double userName) {
+    public User(int id, String userName) {
+        this.id = id;
         this.userName = userName;
     }
 
-    String getMessage() {
-        return this.chatMessage;
+    String getUserName() {
+        return this.userName;
     }
 
-    void setMessage(String chatMessage) {
-        this.chatMessage = chatMessage;
+    void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    InetAddress getInetAddress() {
+
+    String getInetAddress() {
         return this.inetAddress;
     }
 
-    void setInetAddress(InetAddress inetAddress) {
+    void setInetAddress(String inetAddress) {
         this.inetAddress = inetAddress;
+    }
+
+    @Override
+    public String toString() {
+        return "ID: " + this.id + " Name: " + this.userName;
     }
 }
