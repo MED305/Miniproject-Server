@@ -33,27 +33,20 @@ public class Connection implements Runnable{
 
     public void run() {
         try {
+
             while(socket.isConnected()) {
 
-                float test = isFromClient.readFloat();
-                System.out.println(test);
-
                 try {
+                    isFromClient.defaultReadObject();
 
-                    Object data = isFromClient.readObject();
+
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                 }
-                /*
-                // Setting up user data
-                double userNumber = isFromClient.readDouble();
-                toClient.writeDouble(userNumber);
-                this.user.setUserName(userNumber);
-
 
 
                 // Test: confirming things work
-                System.out.println("Username: " + this.user.getUserName() + "\nWith IP-Address: " + this.user.getInetAddress().getHostAddress());
+                //System.out.println("Username: " + this.user.getUserName() + "\nWith IP-Address: " + this.user.getInetAddress().getHostAddress());
 
                 /*
                 byte messageType = isFromClient.readByte();
