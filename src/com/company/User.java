@@ -5,7 +5,6 @@ import java.io.Serializable;
 public class User implements Serializable {
 
     private String userName;
-    public String chatMessage;
     public String inetAddress;
     private int id;
 

@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fd200c0-5d75-432a-b756-7b9b0ca3d773" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Miniproject-Server/com/company/ClientRunnable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Miniproject-Server/com/company/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Miniproject-Server/com/company/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Miniproject-Server/com/company/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Miniproject-Server/com/company/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Connection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/User.java" afterDir="false" />
     </list>
@@ -86,6 +81,7 @@
       <workItem from="1603971966197" duration="5002000" />
       <workItem from="1603994676969" duration="3058000" />
       <workItem from="1604042266660" duration="10833000" />
+      <workItem from="1604302754063" duration="391000" />
     </task>
     <servers />
   </component>

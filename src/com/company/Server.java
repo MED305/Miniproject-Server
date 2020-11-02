@@ -56,6 +56,7 @@ public class Server implements Runnable {
         }
     }
 
+    // When a connection is established a thread will be started up for that connection
     private void initSocket(Socket socket) {
         Connection connection = new Connection(socket);
         new Thread(connection).start();
