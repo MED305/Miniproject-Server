@@ -39,9 +39,9 @@ public class Connection implements Runnable{
 
             while(socket.isConnected()) {
 
-                Object player = isFromClient.readObject();
+                int test = isFromClient.readInt();
+                System.out.println(test);
 
-                sendObject(player);
             }
 
         } catch (SocketException e) {
@@ -50,9 +50,9 @@ public class Connection implements Runnable{
 
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+        } //catch (ClassNotFoundException e) {
+            //e.printStackTrace();
+        //}
     }
 
     public void close () {
