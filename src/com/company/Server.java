@@ -1,55 +1,74 @@
 package com.company;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketException;
 import java.util.Date;
 
-public class Server {
+public class Server implements Runnable {
 
-    // Variables
-    IPAddress ipAddress = new IPAddress();
+    int port;
+    boolean running = false;
+    ServerSocket serverSocket;
 
-    public void startServer(int port) {
-        // Try = define a block of code to be tested.
+    public void server(int port) {
+        this.port = port;
+
         try {
 
             // Instead of Socket = client side, a ServerSocket = server side.
-            ServerSocket serverSocket = new ServerSocket(port);
+            serverSocket = new ServerSocket(port);
 
             // A system message to indicate at which time the server is executed.
             System.out.println("Game Server has been started at " + new Date() + '\n');
 
-            // A serverSocket.accept() methods waits for any connection to be made from the client. This throws an IOException, which is why the code is in a try & catch statement.
-            Socket connectToClient = serverSocket.accept();
-
-            // A system message printing out the connected IP address and the date at which it happen.
-            System.out.println("Connected to IP: " + ipAddress.getAddress() +  "at " + new Date() + '\n');
-
-            // Create data input and output streams
-            DataInputStream fromClient = new DataInputStream(
-                    connectToClient.getInputStream());
-            DataOutputStream toClient = new DataOutputStream(
-                    connectToClient.getOutputStream());
-
-            // A while loop which keeps going as long as a specified condition is true
-            while (true) {
-                // Test receiver
-                double number = fromClient.readDouble();
-
-                // Test calculator
-                double sendBackNumber = number * 100;
-
-                // Test send back
-                toClient.writeDouble(sendBackNumber);
-            }
-
-            // Catch = define a block of code to be executed if an error occurs in "try"
-        } catch(
+        } catch (
                 IOException e) {
             System.err.println(e);
+        }
+    }
+
+    public void start () {
+        new Thread(this).start();
+    }
+
+    @Override
+    public void run () {
+        running = true;
+
+        while (running) {
+            try {
+                // A serverSocket.accept() methods waits for any connection to be made from the client.
+                Socket socket = serverSocket.accept();
+                initSocket(socket);
+
+                // IP address
+                InetAddress inetAddress = socket.getInetAddress();
+
+                System.out.println("Connected to: " + inetAddress.getHostName());
+                System.out.println("With IP address: " + inetAddress.getHostAddress() + " at " + new Date() + '\n');
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    // When a connection is established a thread will be started up for that connection
+    private void initSocket(Socket socket) {
+        Connection connection = new Connection(socket);
+        new Thread(connection).start();
+    }
+
+    public void closeServer() {
+        running = false;
+
+        try {
+            serverSocket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

@@ -11,6 +11,7 @@ public class Main {
         int port = 6969;
 
         Server server = new Server();
-        server.startServer(port);
+        server.server(port);
+        server.start();
     }
 }
