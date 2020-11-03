@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6fd200c0-5d75-432a-b756-7b9b0ca3d773" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Miniproject-Server/com/company/Connection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Miniproject-Server/com/company/Connection.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +36,8 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -43,7 +47,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Miniproject-Client" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -61,13 +65,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -109,7 +115,8 @@
       <workItem from="1604349347999" duration="142000" />
       <workItem from="1604349614943" duration="11000" />
       <workItem from="1604349636232" duration="35000" />
-      <workItem from="1604349939212" duration="329000" />
+      <workItem from="1604349939212" duration="3138000" />
+      <workItem from="1604390219841" duration="693000" />
     </task>
     <servers />
   </component>
@@ -121,6 +128,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1805" y="563" width="537" height="557" key="#Notifications/0.0.2560.1400@0.0.2560.1400" timestamp="1604348653831" />
+    <state x="872" y="358" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604390708830">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="872" y="358" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1604390708830" />
     <state x="1725" y="410" key="#com.intellij.ide.util.MemberChooser" timestamp="1604051188923">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -138,26 +149,26 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="796" y="454" key="FileDocumentManager.FileCacheConflict/0.0.2560.1400@0.0.2560.1400" timestamp="1601628473517" />
-    <state width="2517" height="267" key="GridCell.Tab.0.bottom" timestamp="1604348833791">
+    <state width="2192" height="334" key="GridCell.Tab.0.bottom" timestamp="1604390876537">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="955" height="289" key="GridCell.Tab.0.bottom/0.0.2000.1293@0.0.2000.1293" timestamp="1602233986461" />
-    <state width="2517" height="267" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1604348833791" />
-    <state width="2517" height="267" key="GridCell.Tab.0.center" timestamp="1604348833791">
+    <state width="2192" height="334" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1604390876537" />
+    <state width="2192" height="334" key="GridCell.Tab.0.center" timestamp="1604390876537">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="955" height="289" key="GridCell.Tab.0.center/0.0.2000.1293@0.0.2000.1293" timestamp="1602233986461" />
-    <state width="2517" height="267" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1604348833791" />
-    <state width="2517" height="267" key="GridCell.Tab.0.left" timestamp="1604348833790">
+    <state width="2192" height="334" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1604390876537" />
+    <state width="2192" height="334" key="GridCell.Tab.0.left" timestamp="1604390876537">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="955" height="289" key="GridCell.Tab.0.left/0.0.2000.1293@0.0.2000.1293" timestamp="1602233986461" />
-    <state width="2517" height="267" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1604348833790" />
-    <state width="2517" height="267" key="GridCell.Tab.0.right" timestamp="1604348833791">
+    <state width="2192" height="334" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1604390876537" />
+    <state width="2192" height="334" key="GridCell.Tab.0.right" timestamp="1604390876537">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="955" height="289" key="GridCell.Tab.0.right/0.0.2000.1293@0.0.2000.1293" timestamp="1602233986461" />
-    <state width="2517" height="267" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1604348833791" />
+    <state width="2192" height="334" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1604390876537" />
     <state width="1234" height="491" key="GridCell.Tab.1.bottom" timestamp="1603806003979">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -174,10 +185,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1234" height="491" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1603806003979" />
-    <state x="781" y="345" key="SettingsEditor" timestamp="1604348714129">
+    <state x="1135" y="357" key="SettingsEditor" timestamp="1604390609275">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="781" y="345" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1604348714129" />
+    <state x="1135" y="357" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1604390609275" />
     <state x="871" y="297" key="new project wizard" timestamp="1603800343101">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

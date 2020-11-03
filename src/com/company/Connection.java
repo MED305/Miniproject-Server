@@ -11,6 +11,7 @@ public class Connection implements Runnable{
     private Socket socket;
     private ObjectInputStream isFromClient;
     private ObjectOutputStream toClient;
+    private ObjectInputStream ois = null;
     private int id;
 
     User user = new User(id, "");
@@ -38,35 +39,18 @@ public class Connection implements Runnable{
 
             while(socket.isConnected()) {
 
-                float test = isFromClient.readFloat();
-                System.out.println(test);
+                Object player = isFromClient.readObject();
 
-                // Test: confirming things work
-                //System.out.println("Username: " + this.user.getUserName() + "\nWith IP-Address: " + this.user.getInetAddress().getHostAddress());
-
-                /*
-                byte messageType = isFromClient.readByte();
-                System.out.println("Message: " + messageType);
-
-                // receiver for doubles
-                double number = isFromClient.readDouble();
-
-                // receiver for char
-                char clientMessage = isFromClient.readChar();
-
-                // processing the received double
-                double sendBackNumber = number * 100;
-
-                // returning a new value after being processed in this case a double
-                toClient.writeDouble(sendBackNumber);
-                 */
+                sendObject(player);
             }
 
         } catch (SocketException e) {
             System.out.println("Client with IP: " + user.getInetAddress() + " has disconnected.");
             close();
-        }
-        catch (IOException e) {
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
