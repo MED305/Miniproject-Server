@@ -1,5 +1,6 @@
 package com.company;
 
+import java.awt.*;
 import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -39,8 +40,9 @@ public class Connection implements Runnable{
 
             while(socket.isConnected()) {
 
-                int test = isFromClient.readInt();
-                System.out.println(test);
+                this.user.userX = isFromClient.readFloat();
+
+                sendObject();
 
             }
 
@@ -50,9 +52,9 @@ public class Connection implements Runnable{
 
         } catch (IOException e) {
             e.printStackTrace();
-        } //catch (ClassNotFoundException e) {
-            //e.printStackTrace();
-        //}
+        } /*catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }*/
     }
 
     public void close () {
@@ -66,11 +68,10 @@ public class Connection implements Runnable{
         }
     }
 
-    public void sendObject (Object packet) {
+    public void sendObject() {
         try {
-            toClient.writeObject(packet);
+            toClient.writeFloat((float)12.3);
             toClient.flush();
-
         } catch (IOException e) {
             e.printStackTrace();
         }
