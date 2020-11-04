@@ -60,6 +60,8 @@ public class Server implements Runnable {
     private void initSocket(Socket socket) {
         Connection connection = new Connection(socket);
         new Thread(connection).start();
+        connection.id++;
+        System.out.println(connection.id);
     }
 
     public void closeServer() {

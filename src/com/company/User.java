@@ -24,7 +24,7 @@ public class User implements Serializable {
     }
 
 
-    private void setUserXY(float x, float y) {
+    void setUserXY(float x, float y) {
         this.userX = x;
         this.userY = y;
     }

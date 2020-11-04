@@ -13,7 +13,7 @@ public class Connection implements Runnable{
     private ObjectInputStream isFromClient;
     private ObjectOutputStream toClient;
     private ObjectInputStream ois = null;
-    private int id;
+    public int id;
 
     User user = new User(id, "");
 
@@ -40,8 +40,7 @@ public class Connection implements Runnable{
 
             while(socket.isConnected()) {
 
-                user.userX = isFromClient.readFloat();
-                user.userY = isFromClient.readFloat();
+                user.setUserXY(isFromClient.readFloat(), isFromClient.readFloat());
 
                 sendObject();
 
@@ -53,9 +52,7 @@ public class Connection implements Runnable{
 
         } catch (IOException e) {
             e.printStackTrace();
-        } /*catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }*/
+        }
     }
 
     public void close () {
