@@ -40,7 +40,8 @@ public class Connection implements Runnable{
 
             while(socket.isConnected()) {
 
-                this.user.userX = isFromClient.readFloat();
+                user.userX = isFromClient.readFloat();
+                user.userY = isFromClient.readFloat();
 
                 sendObject();
 
@@ -70,8 +71,10 @@ public class Connection implements Runnable{
 
     public void sendObject() {
         try {
-            toClient.writeFloat((float)12.3);
+            toClient.writeFloat(user.getUserX());
+            toClient.writeFloat(user.getUserY());
             toClient.flush();
+
         } catch (IOException e) {
             e.printStackTrace();
         }

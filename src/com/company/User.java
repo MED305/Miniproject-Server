@@ -24,9 +24,17 @@ public class User implements Serializable {
     }
 
 
-    public void setUserXY(float x, float y) {
+    private void setUserXY(float x, float y) {
         this.userX = x;
         this.userY = y;
+    }
+
+    public float getUserX() {
+        return this.userX;
+    }
+
+    public float getUserY() {
+        return this.userY;
     }
 
 
