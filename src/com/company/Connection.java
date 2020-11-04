@@ -1,25 +1,18 @@
 package com.company;
 
-import java.awt.*;
 import java.io.*;
-import java.net.InetAddress;
 import java.net.Socket;
 import java.net.SocketException;
 
 
-
+/*
 public class Connection implements Runnable{
     private Socket socket;
     private ObjectInputStream isFromClient;
     private ObjectOutputStream toClient;
-    private ObjectInputStream ois = null;
-    public int id;
-
-    User user = new User(id, "");
 
     public Connection(Socket socket) {
         this.socket = socket;
-        id = 0;
 
         try {
             // Object output/input is used to read/write any object types, less efficient but covers more
@@ -28,7 +21,7 @@ public class Connection implements Runnable{
             isFromClient = new ObjectInputStream(socket.getInputStream());
 
             String IP = socket.getInetAddress().getHostAddress();
-            user.setInetAddress(IP);
+            client.setInetAddress(IP);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -36,18 +29,19 @@ public class Connection implements Runnable{
     }
 
     public void run() {
+
         try {
 
             while(socket.isConnected()) {
 
-                user.setUserXY(isFromClient.readFloat(), isFromClient.readFloat());
+                this.client.setUserXY(isFromClient.readFloat(), isFromClient.readFloat());
 
                 sendObject();
 
             }
 
         } catch (SocketException e) {
-            System.out.println("Client with IP: " + user.getInetAddress() + " has disconnected.");
+            System.out.println("Client with IP: " + client.getInetAddress() + " has disconnected.");
             close();
 
         } catch (IOException e) {
@@ -68,12 +62,12 @@ public class Connection implements Runnable{
 
     public void sendObject() {
         try {
-            toClient.writeFloat(user.getUserX());
-            toClient.writeFloat(user.getUserY());
+            toClient.writeFloat(client.getUserX());
+            toClient.writeFloat(client.getUserY());
             toClient.flush();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-}
+}*/

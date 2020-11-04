@@ -5,9 +5,12 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Server implements Runnable {
+
+    ArrayList<Client> clients;
 
     int port;
     boolean running = false;
@@ -15,6 +18,7 @@ public class Server implements Runnable {
 
     public void server(int port) {
         this.port = port;
+        clients = new ArrayList<>();
 
         try {
 
@@ -30,12 +34,12 @@ public class Server implements Runnable {
         }
     }
 
-    public void start () {
+    public void start() {
         new Thread(this).start();
     }
 
     @Override
-    public void run () {
+    public void run() {
         running = true;
 
         while (running) {
@@ -43,12 +47,6 @@ public class Server implements Runnable {
                 // A serverSocket.accept() methods waits for any connection to be made from the client.
                 Socket socket = serverSocket.accept();
                 initSocket(socket);
-
-                // IP address
-                InetAddress inetAddress = socket.getInetAddress();
-
-                System.out.println("Connected to: " + inetAddress.getHostName());
-                System.out.println("With IP address: " + inetAddress.getHostAddress() + " at " + new Date() + '\n');
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -58,10 +56,15 @@ public class Server implements Runnable {
 
     // When a connection is established a thread will be started up for that connection
     private void initSocket(Socket socket) {
-        Connection connection = new Connection(socket);
-        new Thread(connection).start();
-        connection.id++;
-        System.out.println(connection.id);
+        clients.add(new Client(socket));
+        new Thread(clients.get(0)).start();
+
+        // IP address
+        InetAddress inetAddress = socket.getInetAddress();
+
+        System.out.println("Connected to: " + inetAddress.getHostName());
+        System.out.println("With IP address: " + inetAddress.getHostAddress() + " at " + new Date() + '\n');
+
     }
 
     public void closeServer() {
