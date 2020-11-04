@@ -1,14 +1,10 @@
 package com.company;
 
-import java.awt.*;
 import java.io.*;
-import java.net.InetAddress;
 import java.net.Socket;
 import java.net.SocketException;
 
-
-
-public class Connection implements Runnable{
+public class Connection implements Runnable {
     private Socket socket;
     private ObjectInputStream isFromClient;
     private ObjectOutputStream toClient;
@@ -22,7 +18,8 @@ public class Connection implements Runnable{
         id = 0;
 
         try {
-            // Object output/input is used to read/write any object types, less efficient but covers more
+            // Object output/input is used to read/write any object types, less efficient
+            // but covers more
             // Data output/input is simpler and can only read/write primitive types.
             toClient = new ObjectOutputStream(socket.getOutputStream());
             isFromClient = new ObjectInputStream(socket.getInputStream());
@@ -38,7 +35,7 @@ public class Connection implements Runnable{
     public void run() {
         try {
 
-            while(socket.isConnected()) {
+            while (socket.isConnected()) {
 
                 user.userX = isFromClient.readFloat();
                 user.userY = isFromClient.readFloat();
@@ -53,12 +50,12 @@ public class Connection implements Runnable{
 
         } catch (IOException e) {
             e.printStackTrace();
-        } /*catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }*/
+        } /*
+           * catch (ClassNotFoundException e) { e.printStackTrace(); }
+           */
     }
 
-    public void close () {
+    public void close() {
         try {
             isFromClient.close();
             toClient.close();

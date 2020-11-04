@@ -23,7 +23,6 @@ public class User implements Serializable {
         this.userName = userName;
     }
 
-
     private void setUserXY(float x, float y) {
         this.userX = x;
         this.userY = y;
@@ -36,7 +35,6 @@ public class User implements Serializable {
     public float getUserY() {
         return this.userY;
     }
-
 
     String getInetAddress() {
         return this.inetAddress;
