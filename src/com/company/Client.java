@@ -58,14 +58,19 @@ public class Client implements Runnable {
     }
 
     public void sendObject() {
-        try {
-            toClient.writeFloat(getUserX());
-            toClient.writeFloat(getUserY());
-            toClient.flush();
+        for (Client client : Server.clients) {
+            if (client != this) {
+                try {
+                    client.toClient.writeFloat(this.getUserX());
+                    client.toClient.writeFloat(this.getUserY());
+                    toClient.flush();
 
-        } catch (IOException e) {
-            e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
+
     }
 
     String getUserName() {

@@ -10,7 +10,7 @@ import java.util.Date;
 
 public class Server implements Runnable {
 
-    ArrayList<Client> clients;
+    public static ArrayList<Client> clients;
 
     int port;
     boolean running = false;
