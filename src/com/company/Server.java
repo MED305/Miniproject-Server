@@ -57,7 +57,7 @@ public class Server implements Runnable {
     // When a connection is established a thread will be started up for that connection
     private void initSocket(Socket socket) {
         clients.add(new Client(socket));
-        new Thread(clients.get(0)).start();
+        //new Thread(clients.get(0)).start();
 
         // IP address
         InetAddress inetAddress = socket.getInetAddress();

@@ -19,6 +19,7 @@ public class Client implements Runnable {
     public Client(Socket socket) {
         this.socket = socket;
 
+
         try {
             // Object output/input is used to read/write any object types, less efficient but covers more
             // Data output/input is simpler and can only read/write primitive types.
@@ -31,6 +32,7 @@ public class Client implements Runnable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        new Thread(this).start();
     }
 
 
