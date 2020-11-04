@@ -1,14 +1,18 @@
 package com.company;
 
+import java.awt.*;
 import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.SocketException;
 
+
+
 public class Connection implements Runnable{
     private Socket socket;
     private ObjectInputStream isFromClient;
     private ObjectOutputStream toClient;
+    private ObjectInputStream ois = null;
     private int id;
 
     User user = new User(id, "");
@@ -36,43 +40,22 @@ public class Connection implements Runnable{
 
             while(socket.isConnected()) {
 
-                try {
-                    isFromClient.defaultReadObject();
+                user.userX = isFromClient.readFloat();
+                user.userY = isFromClient.readFloat();
 
+                sendObject();
 
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
-                }
-
-
-                // Test: confirming things work
-                //System.out.println("Username: " + this.user.getUserName() + "\nWith IP-Address: " + this.user.getInetAddress().getHostAddress());
-
-                /*
-                byte messageType = isFromClient.readByte();
-                System.out.println("Message: " + messageType);
-
-                // receiver for doubles
-                double number = isFromClient.readDouble();
-
-                // receiver for char
-                char clientMessage = isFromClient.readChar();
-
-                // processing the received double
-                double sendBackNumber = number * 100;
-
-                // returning a new value after being processed in this case a double
-                toClient.writeDouble(sendBackNumber);
-                 */
             }
 
         } catch (SocketException e) {
             System.out.println("Client with IP: " + user.getInetAddress() + " has disconnected.");
             close();
-        }
-        catch (IOException e) {
+
+        } catch (IOException e) {
             e.printStackTrace();
-        }
+        } /*catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }*/
     }
 
     public void close () {
@@ -86,9 +69,10 @@ public class Connection implements Runnable{
         }
     }
 
-    public void sendObject (Object packet) {
+    public void sendObject() {
         try {
-            toClient.writeObject(packet);
+            toClient.writeFloat(user.getUserX());
+            toClient.writeFloat(user.getUserY());
             toClient.flush();
 
         } catch (IOException e) {

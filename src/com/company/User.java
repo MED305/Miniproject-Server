@@ -7,6 +7,8 @@ public class User implements Serializable {
     private String userName;
     public String inetAddress;
     private int id;
+    public float userX;
+    public float userY;
 
     public User(int id, String userName) {
         this.id = id;
@@ -19,6 +21,20 @@ public class User implements Serializable {
 
     void setUserName(String userName) {
         this.userName = userName;
+    }
+
+
+    private void setUserXY(float x, float y) {
+        this.userX = x;
+        this.userY = y;
+    }
+
+    public float getUserX() {
+        return this.userX;
+    }
+
+    public float getUserY() {
+        return this.userY;
     }
 
 
