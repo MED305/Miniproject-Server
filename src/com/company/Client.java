@@ -61,8 +61,10 @@ public class Client implements Runnable {
         for (Client client : Server.clients) {
             if (client != this) {
                 try {
-                    client.toClient.writeFloat(this.getUserX());
-                    client.toClient.writeFloat(this.getUserY());
+                    String send = Integer.toString(Server.clients.indexOf(this)) +"-"+ this.getUserX() +"-"+ this.getUserY();
+                    client.toClient.writeUTF(send);
+                    //client.toClient.writeFloat(this.getUserX());
+                    //client.toClient.writeFloat(this.getUserY());
                     toClient.flush();
 
                 } catch (IOException e) {
