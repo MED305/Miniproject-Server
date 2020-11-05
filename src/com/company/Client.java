@@ -15,6 +15,8 @@ public class Client implements Runnable {
     private ObjectOutputStream toClient;
     public float userX;
     public float userY;
+    String playerNumber;
+
 
     public Client(Socket socket) {
         this.socket = socket;
@@ -35,11 +37,18 @@ public class Client implements Runnable {
         new Thread(this).start();
     }
 
+/*public void intitialise(){
+        playerNumber = Integer.toString(Server.clients.indexOf(this));
+    try {
+        toClient.writeUTF(playerNumber);
+        System.out.println(playerNumber);
+    } catch (IOException e) {
+        e.printStackTrace();
+    }*/
 
     public void run() {
 
         try {
-
             while (socket.isConnected()) {
 
                 setUserXY(isFromClient.readFloat(), isFromClient.readFloat());
