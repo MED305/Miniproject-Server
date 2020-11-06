@@ -31,8 +31,8 @@
 *.out
 *.app
 
-*.idea/
-*.vscode/
+.idea/*
+.vscode/*
 .idea/workspace.xml
 .idea/workspace.xml
 .idea/workspace.xml
