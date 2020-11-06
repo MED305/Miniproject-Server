@@ -20,8 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6fd200c0-5d75-432a-b756-7b9b0ca3d773" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +124,7 @@
       <workItem from="1604476978504" duration="15578000" />
       <workItem from="1604563239833" duration="3784000" />
       <workItem from="1604568232951" duration="328000" />
-      <workItem from="1604649475816" duration="170000" />
+      <workItem from="1604649475816" duration="2649000" />
     </task>
     <servers />
   </component>
@@ -177,26 +177,26 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="796" y="454" key="FileDocumentManager.FileCacheConflict/0.0.2560.1400@0.0.2560.1400" timestamp="1601628473517" />
-    <state width="973" height="330" key="GridCell.Tab.0.bottom" timestamp="1604567897480">
+    <state width="2313" height="333" key="GridCell.Tab.0.bottom" timestamp="1604653625793">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="955" height="289" key="GridCell.Tab.0.bottom/0.0.2000.1293@0.0.2000.1293" timestamp="1602233986461" />
-    <state width="973" height="330" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1604567897480" />
-    <state width="973" height="330" key="GridCell.Tab.0.center" timestamp="1604567897480">
+    <state width="2313" height="333" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1604653625793" />
+    <state width="2313" height="333" key="GridCell.Tab.0.center" timestamp="1604653625793">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="955" height="289" key="GridCell.Tab.0.center/0.0.2000.1293@0.0.2000.1293" timestamp="1602233986461" />
-    <state width="973" height="330" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1604567897480" />
-    <state width="973" height="330" key="GridCell.Tab.0.left" timestamp="1604567897479">
+    <state width="2313" height="333" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1604653625793" />
+    <state width="2313" height="333" key="GridCell.Tab.0.left" timestamp="1604653625793">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="955" height="289" key="GridCell.Tab.0.left/0.0.2000.1293@0.0.2000.1293" timestamp="1602233986461" />
-    <state width="973" height="330" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1604567897479" />
-    <state width="973" height="330" key="GridCell.Tab.0.right" timestamp="1604567897480">
+    <state width="2313" height="333" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1604653625793" />
+    <state width="2313" height="333" key="GridCell.Tab.0.right" timestamp="1604653625793">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="955" height="289" key="GridCell.Tab.0.right/0.0.2000.1293@0.0.2000.1293" timestamp="1602233986461" />
-    <state width="973" height="330" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1604567897480" />
+    <state width="2313" height="333" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1604653625793" />
     <state width="1234" height="491" key="GridCell.Tab.1.bottom" timestamp="1603806003979">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

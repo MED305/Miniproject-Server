@@ -17,7 +17,6 @@ public class Client implements Runnable {
     public float userY;
     String playerNumber;
 
-
     public Client(Socket socket) {
         this.socket = socket;
 
