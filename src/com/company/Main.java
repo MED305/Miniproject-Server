@@ -8,8 +8,6 @@ public class Main {
         // Variables
         int port = 6969;
 
-
-
         Server server = new Server();
         server.server(port);
         server.start();

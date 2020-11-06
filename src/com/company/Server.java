@@ -46,7 +46,6 @@ public class Server implements Runnable {
         while (running) {
             try {
                 // A serverSocket.accept() methods waits for any connection to be made from the
-                // client.
                 Socket socket = serverSocket.accept();
                 initSocket(socket);
 
@@ -60,8 +59,6 @@ public class Server implements Runnable {
     // connection
     private void initSocket(Socket socket) {
         clients.add(new Client(socket));
-
-        //new Thread(clients.get(0)).start();
 
         // IP address
         InetAddress inetAddress = socket.getInetAddress();

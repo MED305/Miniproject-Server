@@ -20,11 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6fd200c0-5d75-432a-b756-7b9b0ca3d773" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Miniproject-Server/com/company/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Miniproject-Server/com/company/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Miniproject-Server/com/company/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Miniproject-Server/com/company/Server.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Connection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,6 +124,7 @@
       <workItem from="1604476978504" duration="15578000" />
       <workItem from="1604563239833" duration="3784000" />
       <workItem from="1604568232951" duration="328000" />
+      <workItem from="1604649475816" duration="170000" />
     </task>
     <servers />
   </component>
