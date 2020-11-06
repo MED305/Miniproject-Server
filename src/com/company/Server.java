@@ -24,8 +24,6 @@ public class Server implements Runnable {
 
             // Instead of Socket = client side, a ServerSocket = server side.
             serverSocket = new ServerSocket(port);
-
-            // A system message to indicate at which time the server is executed.
             System.out.println("Game Server has been started at " + new Date() + '\n');
 
         } catch (IOException e) {
@@ -43,7 +41,7 @@ public class Server implements Runnable {
 
         while (running) {
             try {
-                // A serverSocket.accept() methods waits for any connection to be made from the
+                // A serverSocket.accept() waits for any connection to be made.
                 Socket socket = serverSocket.accept();
                 initSocket(socket);
 
@@ -53,8 +51,7 @@ public class Server implements Runnable {
         }
     }
 
-    // When a connection is established a thread will be started up for that
-    // connection
+    // When a client connection is established a thread will be started up.
     private void initSocket(Socket socket) {
         clients.add(new Client(socket));
 

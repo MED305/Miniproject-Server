@@ -21,6 +21,7 @@ public class Client implements Runnable {
         this.socket = socket;
 
         try {
+
             // Object output/input is used to read/write any object types, less efficient but covers more
             // Data output/input is simpler and can only read/write primitive types.
             toClient = new ObjectOutputStream(socket.getOutputStream());
@@ -35,6 +36,7 @@ public class Client implements Runnable {
         new Thread(this).start();
     }
 
+    // This is started by the thread.start()
     public void run() {
 
         try {
@@ -56,7 +58,7 @@ public class Client implements Runnable {
     }
 
     public void sendObject() {
-        for (Client client : Server.clients) {
+        for (Client client : Server.clients) {      // A loop to tell each client to send the running code.
             if (client != this) {
                 try {
                     String send = Integer.toString(Server.clients.indexOf(this)) +"-"+ this.getUserX() +"-"+ this.getUserY();
